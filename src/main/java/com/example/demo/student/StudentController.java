@@ -27,13 +27,30 @@ public class StudentController {
     }
 
 
+    @PostMapping
+    public void postStudent(@RequestBody Student student) {
+        studentService.postStudent(student);
+    }
+
+    @PutMapping(path = "{id}")
+    public void updateStudent(@PathVariable("id") Long id, @RequestParam(required = false) String email, @RequestParam(required = false) String name) {
+        studentService.updateStudent(id, email, name);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void deleteStudent(@PathVariable("id") Long id) {
+        studentService.deleteStudent(id);
+    }
+
+
+
+
     @GetMapping(value = "/api_check", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> liveCheck() {
-        return  studentService.liveCheck();}
+        return  studentService.liveCheck();
+    }
 
 
-    @PostMapping(value = "/post", produces =  MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> postStudent(@RequestBody Student s) {
-        return studentService.postStudent(s);}
+
 
 }

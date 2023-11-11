@@ -5,11 +5,12 @@ import jakarta.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "student")
 public class Student implements Serializable {
 
     @Serial
@@ -17,13 +18,14 @@ public class Student implements Serializable {
 
 
     @Id
-//    @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
+    @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private long id;
 
     private String email;
     private String name;
 
+    @Transient
     private int age;
 
     private LocalDate birthDate;
@@ -34,29 +36,18 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(long id, String email, String name, int age, LocalDate birthDate) {
+    public Student(long id, String email, String name, LocalDate birthDate) {
         this.id = id;
         this.email = email;
         this.name = name;
-        this.age = age;
         this.birthDate = birthDate;
     }
 
-
-
-//    public Student(String email, String name, int age, LocalDate birthDate) {
-//        this.email = email;
-//        this.name = name;
-//        this.age = age;
-//        this.birthDate = birthDate;
-//    }
-
-
-
-
-
-
-
+    public Student(String email, String name, LocalDate birthDate) {
+        this.email = email;
+        this.name = name;
+        this.birthDate = birthDate;
+    }
 
 
 
@@ -94,7 +85,7 @@ public class Student implements Serializable {
     }
 
     public int getAge() {
-        return age;
+        return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 
     public void setAge(int age) {
