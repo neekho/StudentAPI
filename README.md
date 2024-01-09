@@ -1,5 +1,33 @@
 <a name="readme-top"></a>
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+       <li>
+      <a href="#api-routes">Routes</a>
+      <ul>
+           <li><a href="#api-routes">API Routes</a></li>
+           <li><a href="#front-end-routes">Front-end Routes</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
 
+  </ol>
+</details>
 
 
 
@@ -8,15 +36,37 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+A RESTful student management API that is built on Springboot and PostgreSQL. Similar to [CEU Student Management ](https://github.com/neekho/CEU-Student-Management) except this one is currently does not have a front-end.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+
+
+* [![Java][Java.com]][Java-url]
+* [![PostgreSQL][PostgreSQL.org]][PostgreSQL-url]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[product-screenshot]: images/screenshot.png
+
+[Java.com]: https://img.shields.io/badge/java-35495E?style=for-the-badge&logo=java&logoColor=white
+[Java-url]: https://www.java.com/en/
+
+[PostgreSQL.org]: https://img.shields.io/badge/PostgreSQL-33415E?style=for-the-badge&logo=postgresql&logoColor=white
+[PostgreSQL-url]: https://www.postgresql.org
