@@ -72,8 +72,8 @@ public class StudentService {
         boolean exists = studentRepository.existsById(id);
 
         if (!exists) {
-
-            return new ResponseEntity<String>("{\"error\": \"Student id not found\"}", HttpStatus.NOT_FOUND);
+            return ResponseEntity.ok("200 Up and Running");
+//            return new ResponseEntity<String>("{\"error\": \"Student id not found\"}", HttpStatus.NOT_FOUND);
         }
 
         studentRepository.deleteById(id);
@@ -87,6 +87,18 @@ public class StudentService {
     }
 
 
+    public ResponseEntity<String> getSingleStudent(Long id) {
 
+        boolean studentExist = studentRepository.existsById(id);
+
+        if (studentExist) {
+            System.out.println("student exists");
+            return new ResponseEntity<String>("{\"found\": \"Student id found\"}", HttpStatus.FOUND);
+        }
+
+        System.out.println("student does not exists");
+
+        return new ResponseEntity<String>("{\"error\": \"Student id not found\"}", HttpStatus.NOT_FOUND);
+    }
 
 }

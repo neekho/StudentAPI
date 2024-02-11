@@ -27,6 +27,12 @@ public class StudentController {
     }
 
 
+    @GetMapping(path = "{id}")
+    public ResponseEntity<String> getSingleStudent(@PathVariable("id") Long id) {
+        return studentService.getSingleStudent(id);
+    }
+
+
     @PostMapping
     public void postStudent(@RequestBody Student student) {
         studentService.postStudent(student);
@@ -41,8 +47,6 @@ public class StudentController {
     public void deleteStudent(@PathVariable("id") Long id) {
         studentService.deleteStudent(id);
     }
-
-
 
 
     @GetMapping(value = "/api_check", produces = MediaType.APPLICATION_JSON_VALUE)

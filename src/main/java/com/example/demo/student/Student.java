@@ -30,7 +30,6 @@ public class Student implements Serializable {
 
     private LocalDate birthDate;
 
-
     static List<Student> studentList = new ArrayList<Student>();
 
     public Student() {
