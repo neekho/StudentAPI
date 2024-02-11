@@ -34,7 +34,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Postman Screenshot](./1.PNG)
+
+![RestController.java Screenshot](./assets/controller.PNG)
+
+
+![Model.java Screenshot](./assets/MODEL.PNG)
 
 A RESTful student management API that is built on Springboot and PostgreSQL. Similar to [CEU Student Management ](https://github.com/neekho/CEU-Student-Management) except this one is currently does not have a front-end.
 
