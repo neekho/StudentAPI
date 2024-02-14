@@ -29,8 +29,20 @@ public class StudentService {
         return ResponseEntity.ok("200 Up and Running");
     }
 
+    public ResponseEntity<Object> allRoutes() {
 
-    public void postStudent(Student student) {
+        return ResponseEntity.ok("{" +
+                "'GET liveCheck': 'api/v1/student/api_check', " +
+                "'GET allStudents': '/api/v1/student', " +
+                "'GET single student': '/api/v1/student/student_id'" +
+                "'POST add student': '/api/v1/student'" +
+                "'PUT update student': '/api/v1/student/student_id'" +
+                "'DELETE delete student': '/api/v1/student/student_id'}");
+
+    }
+
+
+    public ResponseEntity<String> postStudent(Student student) {
         Optional<Student> studentOptional = studentRepository.findStudentByEmail(student.getEmail());
 
         if (studentOptional.isPresent()) {
@@ -39,6 +51,9 @@ public class StudentService {
 
         studentRepository.save(student);
         System.out.println(student);
+
+
+        return new ResponseEntity<String>("{\"message\": \"Student added successfully\"}", HttpStatus.OK);
     }
 
 
@@ -50,10 +65,13 @@ public class StudentService {
 
             Optional<Student> studentEmail = studentRepository.findStudentByEmail(email);
 
+            System.out.println(studentEmail);
+
             if (studentEmail.isPresent())
                 throw new IllegalStateException("email taken already");
 
             student.setEmail(email);
+            System.out.println(email + "new email");
 
         }
 
@@ -63,6 +81,7 @@ public class StudentService {
 
         }
 
+        System.out.println("test");
     }
 
 
@@ -72,8 +91,7 @@ public class StudentService {
         boolean exists = studentRepository.existsById(id);
 
         if (!exists) {
-            return ResponseEntity.ok("200 Up and Running");
-//            return new ResponseEntity<String>("{\"error\": \"Student id not found\"}", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<String>("{\"error\": \"Student id not found\"}", HttpStatus.NOT_FOUND);
         }
 
         studentRepository.deleteById(id);

@@ -34,8 +34,8 @@ public class StudentController {
 
 
     @PostMapping
-    public void postStudent(@RequestBody Student student) {
-        studentService.postStudent(student);
+    public ResponseEntity<String> postStudent(@RequestBody Student student) {
+        return studentService.postStudent(student);
     }
 
     @PutMapping(path = "{id}")
@@ -52,6 +52,11 @@ public class StudentController {
     @GetMapping(value = "/api_check", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> liveCheck() {
         return  studentService.liveCheck();
+    }
+
+    @GetMapping(value = "/routes", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> allRoutes() {
+        return  studentService.allRoutes();
     }
 
 
