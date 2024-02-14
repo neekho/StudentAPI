@@ -20,7 +20,6 @@
       <a href="#api-routes">Routes</a>
       <ul>
            <li><a href="#api-routes">API Routes</a></li>
-           <li><a href="#front-end-routes">Front-end Routes</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -88,7 +87,15 @@ _Once installed, open a command prompt, choose your directory wherein you want t
 
 
 _Once the local server is running, open up a browser and go to http://localhost:8080/api/v1/student/api_check 
-to see if the local server is up and running.
+to see if the local server is up and running._
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+___________________________________________________________________________________________________
+
+### Routes
+Go to _http://localhost:8080/api/v1/student/routes_ for a list of possible routes in the current version of this API, for a detailed version of what does each route do, go to API Routes section.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -96,6 +103,22 @@ to see if the local server is up and running.
 ___________________________________________________________________________________________________
 
 
+### API Routes
+
+<h3>v1 Routes</h3>
+Refer here for all the list of available routes in the API. You may use Postman or Curl in testing the endpoints or other API testing tools.
+
+
+* [GET Routes](http://localhost:8080/api/v1/student/routes) _Returns all possible routess in JSON format_
+* [GET List](http://localhost:8080/api/v1/student)  _See all existing students in the database._
+* [GET Single Object Student](http://localhost:8080/api/v1/student/ID) _Provide a student id at the end of this url or else this will result in a 404._
+* [POST Add Student](http://localhost:8080/api/v1/student/post)  _Create a student that will be save in the PostgreSQL database._
+* [PUT Update Student](http://localhost:8080/api/v1/student/ID?email=new_value&name=new_name)  _Update existing student data. ID pertains to the student object that will be updated. The email and name is will be the data for that specified student_
+* [DELETE Student](http://localhost:8080/api/v1/student/ID)  _Delete an existing student. Provide a student id at the end of this url._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+___________________________________________________________________________________________________
 
 
 <!-- ROADMAP -->
